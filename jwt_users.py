@@ -20,4 +20,3 @@ def decode_jwt_token(user_token):
         raise Exception('Token has expired')
     except jwt.InvalidTokenError:
         raise Exception('Invalid token')
-
