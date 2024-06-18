@@ -10,7 +10,7 @@ async def data_of_user(login: Login):
     try:
         conn = psycopg.connect(**connection)
         cur = conn.cursor()
-        cur.execute('''SELECT * FROM user WHERE login = %s AND password = %s''',
+        cur.execute('''SELECT * FROM public.user WHERE login = %s AND password = %s''',
                     (login.login, login.password,))
         data = cur.fetchone()
         if data is None:
@@ -29,17 +29,17 @@ async def get_data_from_db(fio):
     try:
         conn = psycopg.connect(**connection)
         cur = conn.cursor()
-        cur.execute('''SELECT * FROM client WHERE fio_user = %s''', (fio,))
+        cur.execute('''SELECT * FROM client WHERE responsible_person = %s''', (fio,))
         data = cur.fetchall()[0]
         if data is None:
             return {"message": "This user have no clients"}
-        result = [{"account number": row[0],
+        result = [{"accountNumber": row[0],
                    "surname": row[1],
                    "name": row[2],
-                   "middle name": row[3],
+                   "middleName": row[3],
                    "birthday": row[4],
                    "INN": row[5],
-                   "responsible person": row[6],
+                   "responsiblePerson": row[6],
                    "status": row[7]}
                   for row in data]
         return result

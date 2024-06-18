@@ -22,3 +22,8 @@ async def get_client(authorization: Annotated[Optional[str], Header()] = None):
     fio = decode_jwt_token(authorization.split(" ")[1])["fio"]
     response = await get_data_from_db(fio)
     return response
+
+
+@app.post("/update/accounts")
+async def update_accounts():
+    pass
