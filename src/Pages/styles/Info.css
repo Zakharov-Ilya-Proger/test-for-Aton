@@ -1,0 +1,77 @@
+.info-container {
+    background-color: #282c31;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.info-title {
+    font-size: 3rem;
+    color: #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.info-table-wrapper {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table th,
+.info-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-table th {
+    background-color: #f0f0f0;
+    color: #282c31;
+    font-size: 1.5rem;
+}
+
+.info-table tr:nth-child(even) {
+    background-color: #f0f0f0;
+    color: #282c31;
+}
+
+.info-table tr:nth-child(even) .info-select {
+    background-color: #282c31;
+    color: #f0f0f0;
+}
+
+.info-table tr:nth-child(odd) .info-select {
+    background-color: #f0f0f0;
+    color: #282c31;
+}
+
+.info-select {
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.info-button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    color: #282c31;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: #282c31;
+    color: #f0f0f0;
+}
