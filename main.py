@@ -44,7 +44,6 @@ async def update_accounts(items: Update, authorization: Annotated[Optional[str],
         HTTPException(status_code=401, detail="Not Authorized")
     for item in items.accounts:
         result = await update_data(item)
-        print(result)
         if not result:
             HTTPException(status_code=500, detail=str(result))
     HTTPException(status_code=200, detail="All status uptodate")
